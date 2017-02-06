@@ -4,7 +4,7 @@ const credentials = require('./particle-login')
 const _ = require('lodash')
 
 const deviceID = '190029000447353138383138'
-const events = ['Movement']
+const events = ['beamStatus']
 
 const particle = new Particle()
 const nomad = new Nomad()
@@ -28,13 +28,14 @@ particle.login(credentials).then(response => {
 }).then(s => {
   stream = s
   stream.on('event', data => {
+    console.log(data)
     const message = {
       data: data.data, 
       publishedAt: data.published_at, 
       event: data.name
     }
     console.log(`publishing: ${message.publishedAt}`)
-    instance.publish(message)
+    instance.publish("yo yo yo")
     .catch(err => {
       console.log(`Error: ${err}`)
     })

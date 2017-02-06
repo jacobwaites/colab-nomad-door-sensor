@@ -4,6 +4,9 @@
     "eslint-config-airbnb-base": "8.0.0",
     "eslint-plugin-import": "1.16.0"
   },
+  "nomadName" : "CoLab BOS Door Sensor",
+  "description" : "A node for tracking door opens and closes.",
+  "author" : "Jacob Waites",
   "scripts": {
     "lint": "eslint ."
   },
