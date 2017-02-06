@@ -1,4 +1,4 @@
-"credentials" : {
+var credentials = {
   "access_token": "8d72d1e5abdffff9cd0616907d305f9e976eed5c",
   "token_type": "bearer",
   "expires_in": 7776000,
