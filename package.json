@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "eslint": "3.7.1",
+    "eslint-config-airbnb-base": "8.0.0",
+    "eslint-plugin-import": "1.16.0"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.16.4",
+    "nomad-stream": "^1.0.0",
+    "particle-api-js": "^6.2.0"
+  }
+}
