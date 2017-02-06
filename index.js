@@ -14,7 +14,7 @@ let token = null
 let stream = null
 let publish = null
 
-particle.login(credentials).then(response => {
+particle.login({username: credentials.username, password: credentials.password}).then(response => {
   token = response.body.access_token
   console.log(`Got token: ${token}`)
 
