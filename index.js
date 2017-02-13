@@ -21,21 +21,22 @@ particle.login(credentials).then(response => {
   return nomad.prepareToPublish()
 }).then((n) => {
   instance = n
-  instance.publish = _.throttle(instance.publish, 30000)
+  instance.publish = _.throttle(instance.publish, 20000)
   return instance.publishRoot('Particle adaptor running')
 }).then(() => {
+  console.log("say something")
     return particle.getEventStream({ deviceId: deviceID, name: events[0], auth: token })
 }).then(s => {
   stream = s
   stream.on('event', data => {
-    console.log(data)
     const message = {
       data: data.data, 
       publishedAt: data.published_at, 
       event: data.name
     }
+    console.log(message)
     console.log(`publishing: ${message.publishedAt}`)
-    instance.publish("yo yo yo")
+    instance.publish(message)
     .catch(err => {
       console.log(`Error: ${err}`)
     })
